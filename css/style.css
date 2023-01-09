@@ -55,7 +55,7 @@ main {
       padding-top: 40px;
 }
 
-.item{
+.item {
       display: flex;
       flex-flow: row wrap;
       justify-content: center;
@@ -64,20 +64,66 @@ main {
       height: 80px;
       width: 100%;
       box-shadow: 0 0 20 #ccc;
+      margin-bottom: 2%;
+      cursor: pointer;
+      border-radius: 10px;
 }
 
-.item-icone{
-      flex:20%;
+.item.clicado {
+      background: #d4f6d9;
+}
+
+.item.clicado .item-nome {
+      text-decoration: line-through;
+      color: gray;
+}
+
+.item-icone {
+      flex: 20%;
       text-align: center;
       font-size: 2rem;
+      border-radius: 10px;
 }
 
-.item-nome{
-      flex:55%;
+.item-nome {
+      flex: 55%;
       font-size: 20px;
       font-weight: bold;
+      
 }
 
-.item-botao{
-      flex:25%;
+.item-botao {
+      flex: 19%;
+}
+
+.delete {
+      background: rgb(218, 22, 22);
+      color: white;
+      border: none;
+      padding: 10px;
+      height: 80px;
+      width: 100%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+}
+.mdi-check-circle {
+      color: green;
+}
+
+.tamanho {
+      font-size: 15px;
+      text-align: center;
+}
+
+.mdi-delete {
+      font-size: 25px;
+}
+
+.addtexto{
+      font-size: 15px;
 }

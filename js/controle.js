@@ -3,15 +3,21 @@ let input = document.getElementById('inputTarefa');
 let btnAdd = document.getElementById('btn-add');
 let main = document.getElementById('areaLista')
 
+
 function addTarefa() {
       //PEGAR O VALOR DIGITADO NO INPUT
       let valorInput = input.value;
 
-      //SE NÃO FOR VAZIO, NEM NULO, NEM INDEFINIDO
-      if (valorInput !== "" && valorInput !== null && valorInput !== undefined) {
-            ++contador;
+      if (valorInput == null || valorInput.trim() == "") {
+            document.getElementById("error").hidden = false;
+            return;
+      }
+      document.getElementById("error").hidden = true;
 
-            let novoItem = `<div id="${contador}" class="item">
+      //SE NÃO FOR VAZIO, NEM NULO, NEM INDEFINIDO
+      ++contador;
+
+      let novoItem = `<div id="${contador}" class="item">
       <div onclick="marcarTarefa(${contador})" class="item-icone">
             <i id="icone_${contador}" class="mdi mdi-circle-outline"></i>
       </div>
@@ -23,14 +29,14 @@ function addTarefa() {
       </div>
 </div>`;
 
-            // ADICIONAR NOVO ITEM NO MAIN
-            main.innerHTML += novoItem;
+      // ADICIONAR NOVO ITEM NO MAIN
+      main.innerHTML += novoItem;
 
-            //ZERAR OS CAMPOS
-            input.value = "";
-            input.focus();
-      }
+      //ZERAR OS CAMPOS
+      input.value = "";
+      input.focus();
 }
+
 
 function deletar(id) {
       var tarefa = document.getElementById(id);

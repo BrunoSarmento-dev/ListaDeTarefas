@@ -10,9 +10,13 @@ function addTarefa() {
 
       if (valorInput == null || valorInput.trim() == "") {
             document.getElementById("error").hidden = false;
+            input.style.border = "3px solid red";
             return;
       }
       document.getElementById("error").hidden = true;
+      input.style.border = "1px solid black";
+
+
 
       //SE NÃO FOR VAZIO, NEM NULO, NEM INDEFINIDO
       ++contador;
@@ -27,7 +31,7 @@ function addTarefa() {
       <div class="item-botao">
             <button onclick="deletar(${contador})" class="delete"><i class="mdi mdi-delete" class="tamanho"></i> <span class="tamanho">Deletar</span></button>
       </div>
-</div>`;
+      </div>`;
 
       // ADICIONAR NOVO ITEM NO MAIN
       main.innerHTML += novoItem;
@@ -65,9 +69,6 @@ function marcarTarefa(id) {
             icone.classList.add("mdi-circle-outline");
       }
 }
-
-
-
 
 
 input.addEventListener("keyup", function (event) {

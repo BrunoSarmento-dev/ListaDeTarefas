@@ -8,7 +8,7 @@ body {
       margin: 0;
       padding: 0;
       font-family: Noto Sans;
-      background: #eeeeee;
+      background: #e8e8e8;
 }
 
 h1 {
@@ -58,7 +58,8 @@ input {
       border-radius: 10px;
 }
 
-button.add {
+button#btn-add {
+      display: inline-block;
       width: 20vw;
       cursor: pointer;
       background: green;
@@ -68,8 +69,40 @@ button.add {
       height: 100px;
       border-top-right-radius: 10px;
       border-bottom-right-radius: 10px;
+      transition: all 0.5s;
+}
+
+button#btn-add:hover {
+      background: rgb(1, 106, 1);
+}
+
+
+button#btn-add span {
+      cursor: pointer;
+      display: inline-block;
+      position: relative;
+      transition: 0.5s;
+}
+
+button#btn-add span:after {
+      content: '»';
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      right: -15px;
+      transition: 0.5s;
+}
+
+button#btn-add:hover span {
+      padding-right: 15px;
 
 }
+
+button#btn-add:hover span:after {
+      opacity: 1;
+      right: 0;
+}
+
 
 main {
       display: flex;
@@ -121,11 +154,19 @@ main {
       width: 20vw;
 }
 
-.delete {
-      background: rgb(218, 22, 22);
-      color: white;
-      border: none;
+button.delete {
+      position: relative;
+      background-color: rgb(230, 34, 77);
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+      /* box-shadow: rgb(121, 18, 55) 0px 4px 0px 0px; */
       padding: 10px;
+      background-repeat: no-repeat;
+      color: #fff;
+      border: none;
+      transition: all .3s ease-in-out;
+      z-index: 1;
+      overflow: hidden;
       height: 80px;
       width: 100%;
       cursor: pointer;
@@ -133,8 +174,23 @@ main {
       align-items: center;
       text-align: center;
       justify-content: center;
-      border-top-right-radius: 10px;
-      border-bottom-right-radius: 10px;
+}
+
+button.delete::before {
+      content: "";
+      background-color: rgb(150, 33, 58);
+      width: 0;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      transition: width 700ms ease-in-out;
+      display: inline-block;
+}
+
+button.delete:hover::before {
+      width: 100%;
 }
 
 .mdi-check-circle {
@@ -142,7 +198,7 @@ main {
 }
 
 .tamanho {
-      font-size: 15px;
+      font-size: 20px;
       text-align: center;
 }
 
@@ -151,7 +207,7 @@ main {
 }
 
 .addtexto {
-      font-size: 15px;
+      font-size: 20px;
 }
 
 

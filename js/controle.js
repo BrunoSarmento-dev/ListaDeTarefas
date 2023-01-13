@@ -4,13 +4,21 @@ let btnAdd = document.getElementById('btn-add');
 let main = document.getElementById('areaLista')
 
 
+
 function addTarefa() {
       //PEGAR O VALOR DIGITADO NO INPUT
       let valorInput = input.value;
 
+      //SE NÃO FOR VAZIO, NEM NULO, NEM INDEFINIDO
       if (valorInput == null || valorInput.trim() == "") {
             document.getElementById("error").hidden = false;
             input.style.border = "3px solid red";
+            // adiciona a classe animate__shakeX ao elemento
+            document.getElementById("error").classList.add("animate__shakeX");
+            // remove a classe animate__shakeX após 300 milisegundos
+            setTimeout(() => {
+                  document.getElementById("error").classList.remove("animate__shakeX");
+            }, 300);
             return;
       }
       document.getElementById("error").hidden = true;
@@ -18,7 +26,6 @@ function addTarefa() {
 
 
 
-      //SE NÃO FOR VAZIO, NEM NULO, NEM INDEFINIDO
       ++contador;
 
       let novoItem = `<div id="${contador}" class="item">
@@ -58,7 +65,7 @@ function marcarTarefa(id) {
             icone.classList.remove("mdi-circle-outline");
             icone.classList.add("mdi-check-circle");
 
-            item.parentNode.appendChild(item);
+            // item.parentNode.appendChild(item);
 
 
       } else {
@@ -79,4 +86,5 @@ input.addEventListener("keyup", function (event) {
       }
 }
 );
+
 

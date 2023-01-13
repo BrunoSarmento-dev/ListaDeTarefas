@@ -11,6 +11,7 @@
       <meta name="keywords" content="XXXXXX"> <!-- palavras chave (separadas por virgula) -->
       <link rel="stylesheet" href="css/style.css">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@6.9.96/css/materialdesignicons.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 </head>
 
 <body>
@@ -19,12 +20,12 @@
       <header>
             <div class="input-wrapper">
 
-                  <input id="inputTarefa" type="text" placeholder="Digite Sua Tarefa" >
+                  <input id="inputTarefa" type="text" placeholder="Digite Sua Tarefa">
                   <button onclick="addTarefa()" id="btn-add" class="add">
                         <span class="addtexto">Adicionar</span></button>
 
-                  </div>
-                  <span hidden id="error">Campo vazio</span>
+            </div>
+            <span hidden id="error" class="animate__animated ">Por favor, preencha o campo</span>
       </header>
 
       <main id="areaLista">
